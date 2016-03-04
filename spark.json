@@ -1,0 +1,7 @@
+{
+  "name": "publishqueue-library-spark",
+  "author": "Tiago Andrade e Silva <tiagonmas@hotmail.com>",
+  "license": "MIT",
+  "version": "0.0.10",
+  "description": "Delays the calling of cloud events (Particle.publish) so it does not pass the limits defined by Particle"
+}
