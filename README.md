@@ -1,6 +1,10 @@
 # publishqueue-library-spark
-Queues / delays the calling of cloud events (via Particle.publish) so it does not pass the limits defined by Particle
+Delays (puts in queues, thus the name) the calling of cloud events (via Particle.publish) so it does not pass the limits defined by Particle
+  As defined by Particle in the [Particle.publish()](https://docs.particle.io/reference/firmware/photon/#particle-publish-) documentation: 
 
+    "_NOTE: Currently, a device can publish at rate of about 1 event/sec, with bursts of up to 4 allowed in 1 second. Back to back burst of 4 messages will take 4 seconds to recover._"
+    
+    it will record the time of last publish event, and delay the next publish event until a safe time as passed to guarantee the limits above are not hit.
 #Example
 
 #In Action
