@@ -39,9 +39,10 @@ void loop()
 ```
 
 
-#Result of Example
-:ok
+#Result of running this example
+notice that the event dates are 1s appart.
 
+'''
 event: EventName1
 data: {"data":"11111","ttl":"60","published_at":"2016-03-04T18:17:39.529Z","coreid":"1f0036000847343432313031"}
 
@@ -77,3 +78,4 @@ data: {"data":"99992","ttl":"60","published_at":"2016-03-04T18:19:09.574Z","core
 
 event: EventName11
 data: {"data":"99993","ttl":"60","published_at":"2016-03-04T18:19:19.579Z","coreid":"1f0036000847343432313031"}
+'''
