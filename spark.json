@@ -1,5 +1,5 @@
 {
-  "name": "publishqueue-library-spark",
+  "name": "PublishQueue",
   "author": "Tiago Andrade e Silva <tiagonmas@hotmail.com>",
   "license": "MIT",
   "version": "0.0.10",
