@@ -6,17 +6,32 @@ Delays (puts in queues, thus the name) the calling of cloud events (via Particle
 
 it will record the time of last publish event and delay the next publish event until enough time as passed to guarantee the limits above are not hit.
 
-#Example
+#Usage Example
 
-#In Action
+```c++
+    PublishQueue pubQueue(1000);
+
+    pubQueue.Publish("EventName1","11111");
+    pubQueue.Publish("EventName2","22222");
+    pubQueue.Publish("EventName3","33333");
+    pubQueue.Publish("EventName4","44444");
+    pubQueue.Publish("EventName5","55555");
+    pubQueue.Publish("EventName6","66666");
+    pubQueue.Publish("EventName7","77777");
+    pubQueue.Publish("EventName8","88888");
+    pubQueue.Publish("EventName9","99999");
+    pubQueue.Publish("EventName10","99990");
+    pubQueue.Publish("EventName11","99991");
+    pubQueue.Publish("EventName12","99992");
+    pubQueue.Publish("EventName13","99993");
+    pubQueue.Publish("EventName14","99994");
+    pubQueue.Publish("EventName15","99995");
+    pubQueue.Publish("EventName16","99996");
+```
+
+
+#Result of Example
 :ok
-
-
-event: spark/status
-data: {"data":"online","ttl":"60","published_at":"2016-03-04T18:17:33.784Z","coreid":"1f0036000847343432313031"}
-
-event: version
-data: {"data":"v0.04.TAS.PQ","ttl":"60","published_at":"2016-03-04T18:17:33.995Z","coreid":"1f0036000847343432313031"}
 
 event: EventName1
 data: {"data":"11111","ttl":"60","published_at":"2016-03-04T18:17:39.529Z","coreid":"1f0036000847343432313031"}
