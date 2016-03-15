@@ -4,20 +4,14 @@
 // This #include statement was automatically added by the Particle IDE.
 #include "elapsedMillis/elapsedMillis.h"
 
-
-PublishQueue pubQueue(10000);
-
-
-char version[]="v0.04.TAS.PQ";
+//Create a queue that only calls a publish event once per second
+PublishQueue pubQueue(1000);
 
 void setup()
 {
     Serial.begin(9600);
-
-    Serial.println("\n\n\n\n\n\n\n");
-    Serial.println("version:" + String(version));
-    Particle.publish("version",version);
-
+    
+	//inject several events in the queue and then check that they are called in intervals of 1s
     pubQueue.Publish("EventName1","11111");
     pubQueue.Publish("EventName2","22222");
     pubQueue.Publish("EventName3","33333");
@@ -26,18 +20,17 @@ void setup()
     pubQueue.Publish("EventName6","66666");
     pubQueue.Publish("EventName7","77777");
     pubQueue.Publish("EventName8","88888");
-    pubQueue.Publish("EventName9","99991");
-    pubQueue.Publish("EventName10","99992");
-    pubQueue.Publish("EventName11","99993");
-    pubQueue.Publish("EventName12","99994");
-    pubQueue.Publish("EventName13","99995");
-    pubQueue.Publish("EventName14","99996");
-    pubQueue.Publish("EventName15","99997");
-    pubQueue.Publish("EventName16","99998");
+    pubQueue.Publish("EventName9","99999");
+    pubQueue.Publish("EventName10","99990");
+    pubQueue.Publish("EventName11","99991");
+    pubQueue.Publish("EventName12","99992");
+    pubQueue.Publish("EventName13","99993");
+    pubQueue.Publish("EventName14","99994");
+    pubQueue.Publish("EventName15","99995");
+    pubQueue.Publish("EventName16","99996");
 }
 
 void loop()
 {
     pubQueue.Process();
-    //delay(500);
 }
