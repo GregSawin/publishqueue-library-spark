@@ -7,10 +7,14 @@ Delays (puts in queues, thus the name) the calling of cloud events (via Particle
 it will record the time of last publish event and delay the next publish event until enough time as passed to guarantee the limits above are not hit.
 
 #Usage Example
+Check [this code](https://github.com/tiagonmas/publishqueue-library-spark/tree/master/firmware/examples) for a workign sample of using this library.
 
 ```c++
-    PublishQueue pubQueue(1000);
 
+PublishQueue pubQueue(1000);
+
+void setup()
+{
     pubQueue.Publish("EventName1","11111");
     pubQueue.Publish("EventName2","22222");
     pubQueue.Publish("EventName3","33333");
@@ -27,6 +31,11 @@ it will record the time of last publish event and delay the next publish event u
     pubQueue.Publish("EventName14","99994");
     pubQueue.Publish("EventName15","99995");
     pubQueue.Publish("EventName16","99996");
+}   
+void loop()
+{
+    pubQueue.Process();
+}
 ```
 
 
