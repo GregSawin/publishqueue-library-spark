@@ -22,11 +22,6 @@ pubQueue.Process();
 #Example
 Check [this code](https://github.com/tiagonmas/publishqueue-library-spark/tree/master/firmware/examples) for a working sample of using this library.
 
-You'll have to create the 
-```c++
-
-PublishQueue pubQueue(1000);
-
 ```c++
 
 PublishQueue pubQueue(1000);
