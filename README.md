@@ -5,9 +5,27 @@ Delays (puts in queues, thus the name) the calling of cloud events (via Particle
 >"NOTE: Currently, a device can publish at rate of about 1 event/sec, with bursts of up to 4 allowed in 1 second. Back to back burst of 4 messages will take 4 seconds to recover."
 
 it will record the time of last publish event and delay the next publish event until enough time as passed to guarantee the limits above are not hit.
+#Usage
+You'll start by declarint the object with a parameter of the minimum elapsed time between publish events
+```c++
+PublishQueue pubQueue(1000);
+```
+Then you need to publish events to this queue, instead of submitting them directly to Particle. 
+```c++
+pubQueue.Publish("EventName1","11111");
+```
+Finally, you will need to call the Process() method inside your loop. The library will evolve to use Timers in the future, but for now you'll have to call this method to get things going.
+```c++
+pubQueue.Process();
+```
 
-#Usage Example
-Check [this code](https://github.com/tiagonmas/publishqueue-library-spark/tree/master/firmware/examples) for a workign sample of using this library.
+#Example
+Check [this code](https://github.com/tiagonmas/publishqueue-library-spark/tree/master/firmware/examples) for a working sample of using this library.
+
+You'll have to create the 
+```c++
+
+PublishQueue pubQueue(1000);
 
 ```c++
 
