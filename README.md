@@ -92,3 +92,7 @@ data: {"data":"99992","ttl":"60","published_at":"2016-03-04T18:19:09.574Z","core
 event: EventName11
 data: {"data":"99993","ttl":"60","published_at":"2016-03-04T18:19:19.579Z","coreid":"1f0036000847343432313031"}
 '''
+#Future version
+* Implement Timers so the user does not have to call Publish within the loop.
+* Implement callbacks so user can get result of publish event (if it was succesfull or not)
+* Implement priority queues so more important events can go to front of queue
