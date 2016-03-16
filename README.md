@@ -5,6 +5,8 @@ Delays (puts in queues, thus the name) the calling of cloud events (via Particle
 >"NOTE: Currently, a device can publish at rate of about 1 event/sec, with bursts of up to 4 allowed in 1 second. Back to back burst of 4 messages will take 4 seconds to recover."
 
 it will record the time of last publish event and delay the next publish event until enough time as passed to guarantee the limits above are not hit.
+
+This is a firware library to work with https://www.particle.io/. Was tested with Photon devices.
 #Usage
 You'll start by declarint the object with a parameter of the minimum elapsed time between publish events
 ```c++
