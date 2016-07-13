@@ -33,10 +33,16 @@ void PublishQueue::Process()
     //If queue is not empty process the next event.
     if (!my_queue.empty() && _IsReadyToProcess()) {
         node my_node=my_queue.front();
-        my_queue.pop();
         Debug("Publishing to CLOUD event: "+ my_node.eventName +" "+my_node.data);
-        Particle.publish(my_node.eventName, my_node.data);
-        lastMillis=millis(); //Update the time we last published
+        bool success = Particle.publish(my_node.eventName, my_node.data, 60, PRIVATE);
+        if (success)
+        {
+            my_queue.pop();
+            lastMillis=millis(); //Update the time we last published
+        }
+        else
+            Debug("Pulish failed, keep item on queue");
+
     }
     
 }
@@ -44,12 +50,12 @@ void PublishQueue::Process()
 //Private Members
 bool PublishQueue::_IsReadyToProcess()
 {
-    return (millis()-lastMillis>_intervalMillis);
+    return (Particle.connected() && millis()-lastMillis>_intervalMillis);
 }
 
 void PublishQueue::Debug(String str)
 {
-    Serial.println(str); 
+    Serial1.println(str); 
     //delay(100);
 }
 
