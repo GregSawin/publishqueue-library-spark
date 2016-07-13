@@ -1,8 +1,5 @@
-// This #include statement was automatically added by the Particle IDE.
 #include "PublishQueue.h"
 
-// This #include statement was automatically added by the Particle IDE.
-#include "elapsedMillis/elapsedMillis.h"
 
 //Create a queue that only calls a publish event once per second
 PublishQueue pubQueue(1000);
@@ -11,7 +8,7 @@ void setup()
 {
     Serial.begin(9600);
     
-	//inject several events in the queue and then check that they are called in intervals of 1s
+    //inject several events in the queue and then check that they are called in intervals of 1s
     pubQueue.Publish("EventName1","11111");
     pubQueue.Publish("EventName2","22222");
     pubQueue.Publish("EventName3","33333");
