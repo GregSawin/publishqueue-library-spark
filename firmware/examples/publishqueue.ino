@@ -1,8 +1,4 @@
-// This #include statement was automatically added by the Particle IDE.
 #include "PublishQueue.h"
-
-// This #include statement was automatically added by the Particle IDE.
-#include "elapsedMillis/elapsedMillis.h"
 
 //Create a queue that only calls a publish event once per second
 PublishQueue pubQueue(1000);
